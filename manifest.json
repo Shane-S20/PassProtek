@@ -1,0 +1,25 @@
+{
+    "name": "197A Demo",
+    "description": "This demo outlines the basic functions of our senior design project.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "testing.js"
+    },
+    "action": {
+        "default_popup": "layout.html",
+        "default_icon": {
+        "16": "testicon.png",
+        "32": "testicon.png",
+        "48": "testicon.png",
+        "128": "testicon.png"
+        }
+    },
+    "icons": {
+        "16": "testicon.png",
+        "32": "testicon.png",
+        "48": "testicon.png",
+        "128": "testicon.png"
+    },
+    "permissions": ["storage", "tabs"]
+}
