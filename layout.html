@@ -3,17 +3,32 @@
 <head>
 
 <link rel = "stylesheet" href = "test_style.css">
+<script src = "jquery-3.6.0.js"> </script>
+
 
 </head>
 <body>
 <h1>URL TEST DEMO </h1>
 <br>
 <div id = "box">
-    <span> URL:</span> <input type = "text" id = "URL_Box" size = "50">
+    <span> URL:</span> <h2 id = "url"> </h2>
+    <br>
     <button id ="Test_button"> Test URL </button>
     <h1 id = "result"> </h1>
+    
 </div>
 
+<h1> Create New User: </h1>
+<br>
+<span>Username:</span>
+    <input type = "text" id = "uname" size="15">
+    <br>
+    <br>
+<span> Password:</span>
+    <input type = "text" id = "pword" size="15">
+    <button id = "create"> Create User </button>
+    <button id = "retrieve"> Display Credentials </button>
 <script src = "function.js"></script>
+<script src = "testing.js"></script>
 </body>
 </html>

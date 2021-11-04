@@ -5,3 +5,6 @@
 body{
     background-color:lightskyblue;
 }
+h1, h2{
+    display: inline;
+}
