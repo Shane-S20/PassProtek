@@ -1,13 +1,6 @@
 
 console.log("FUNCTION TEST")
 
-//let btn = document.getElementById("Test_button");
-//btn.addEventListener("click", test_URL)
-
-//let createUser = document.getElementById("create");
-//createUser.addEventListener("click",create_user);
-
-//function test_URL()
 $("#Test_button").on("click",function()
 {
     chrome.tabs.query({'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT},function(tabs)
@@ -27,27 +20,15 @@ $("#Test_button").on("click",function()
         });
     //DON'T USE VAR, USE CONST OR LET INSTEAD
     console.log("URL TESTED")
+
 })
 
-//$("#create").on("click", function(){ 
-//    alert("CREATING USER")
+$("#ip_button").on("click",function()
+{
+   console.log("IP CLICKED")
+    $.getJSON("https://api.ipify.org?format=json", function(data)
+    {
+        $("#ip").html(data.ip)
+    })
 
-    //chrome.storage.sync.set({'foo': 'hello', 'bar': 'hi'}, function() {
-    //   console.log('Settings saved');
-    //  });
-  
-      // Read it using the storage API
-    //  chrome.storage.sync.get(['foo', 'bar'], function(items) {
-    //    message('Settings retrieved', items);
-    //  });
-
-    // chrome.storage.sync.set({'username': 'value', 'password': 'password'}, function() {
-    //     value = document.getElementById("uname").value
-    //     password = document.getElementById("pword").value
-    // })
-
-
-    // chrome.storage.sync.get(['username'], function(result) {
-    //     alert('Username currently is ' + result.key)
-    // })
-//})
+})
