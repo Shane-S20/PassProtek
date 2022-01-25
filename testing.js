@@ -9,12 +9,14 @@ $("#create").on("click", function(){
   });  
 })
 
-
 $("#retrieve").on("click", function(){
   chrome.storage.sync.get(['username', 'password'], function(items) {
     console.log('Settings retrieved', items);
     let uname = atob(items.username)
     let pass = atob(items.password)
+    console.log("JSON STRING: " + JSON.stringify(items))
     console.log("Decrypted Login Credentials: " + uname + " " + pass)
+    document.getElementById("encodedText").innerHTML = "Encoded Username:    " + items.username + " Encoded Password:     " + items.password  
+    document.getElementById("decodedText").innerHTML = "Decoded Username:    " + uname + " Decoded Password:    " + pass
   });
 })
