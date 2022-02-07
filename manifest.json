@@ -7,7 +7,7 @@
         "service_worker": "testing.js"
     },
     "action": {
-        "default_popup": "layout.html",
+        "default_popup": "MasterLogin.html",
         "default_icon": {
         "16": "testicon.png",
         "32": "testicon.png",

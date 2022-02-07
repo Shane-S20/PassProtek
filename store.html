@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#window{
+    width: 500px;
+    height: 200px;
+    text-align: center;
+}   
+body{
+    background-color:lightskyblue;
+}
+</style>    
+
+
+</head>
+<body>
+<div id="window">
+    <h1>Store Login Credentials Below</h1>
+    <input type = "text" id = "loginUname" size="20" placeholder="Username" required>
+    <input type = "text" id = "loginPword" size="20" placeholder="Password" required>
+    <input type = "text" if = "loginURL" size="50" placeholder="Login Page URL" required>
+    <br>
+    <button id="StoreCredentials" onclick="StoretoFile()"> Submit Credentials</button>
+    <br>
+    <a href="layout.html">
+        <button id="Back"> Go Back </button>
+    </a>
+</div>   
+
+<script src = "function.js"></script>
+<script src = "testing.js"></script>
+</body>
+</html>
