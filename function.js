@@ -1,7 +1,7 @@
 
 console.log("FUNCTION TEST")
 
-$("#Test_button").on("click",function()
+$("#Test_button").click(function()
 {
     chrome.tabs.query({'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT},function(tabs)
     {
@@ -21,9 +21,9 @@ $("#Test_button").on("click",function()
     //DON'T USE VAR, USE CONST OR LET INSTEAD
     console.log("URL TESTED")
 
-})
+});
 
-$("#ip_button").on("click",function()
+$("#ip_button").click(function()
 {
    console.log("IP CLICKED")
     $.getJSON("https://api.ipify.org?format=json", function(data)

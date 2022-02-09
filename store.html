@@ -11,24 +11,30 @@ body{
     background-color:lightskyblue;
 }
 </style>    
-
+<script src="jquery-3.6.0.js" type="text/javascript"></script>
+<script src="TestDB.js"></script> 
 
 </head>
 <body>
 <div id="window">
-    <h1>Store Login Credentials Below</h1>
-    <input type = "text" id = "loginUname" size="20" placeholder="Username" required>
-    <input type = "text" id = "loginPword" size="20" placeholder="Password" required>
-    <input type = "text" if = "loginURL" size="50" placeholder="Login Page URL" required>
-    <br>
-    <button id="StoreCredentials" onclick="StoretoFile()"> Submit Credentials</button>
-    <br>
-    <a href="layout.html">
-        <button id="Back"> Go Back </button>
-    </a>
+    <div id="Add">
+        <h1>Store Login Credentials Below</h1>
+        <form id="Add_Credentials">
+            <input type="text" id="siteName" name="siteName" size="20" placeholder="Website Name" required>
+            <input type="text" id="loginUname" name="loginUname" size="20" placeholder="Username" required>
+            <input type="text" id="loginPword" name="loginPword" size="20" placeholder="Pass" required>
+            <input type="text" id="loginURL" name="loginURL" size="50" placeholder="Login Page URL" required>
+            <button type="button" id="store"> Submit Credentials</button>
+        </form>
+        <a href="layout.html">
+            <button id="Back"> Go Back </button>
+        </a>
+    </div>
+ 
 </div>   
 
-<script src = "function.js"></script>
-<script src = "testing.js"></script>
+<!-- <script src = "function.js"></script>
+<script src = "testing.js"></script> 
+FOR BUTTON ==> onclick="StoretoFile()" -->
 </body>
 </html>
