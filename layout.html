@@ -2,8 +2,22 @@
 <html>
 <head>
 
-<link rel = "stylesheet" href = "test_style.css">
+<style>
+#box{
+    width: 500px;
+    height: 200px;
+}
+body{
+    background-color:lightskyblue;
+}
+h1, h2{
+    display: inline;
+}
+</style>
+
 <script src = "jquery-3.6.0.js"> </script>
+    
+<!-- <link rel = "stylesheet" href = "test_style.css"> -->
 
 </head>
 <body>
@@ -35,10 +49,15 @@
 <a href="store.html">
     <button id="store"> Store Login Credentials </button>
 </a>
+<a href="GetCredentials.html">
+    <button id="get"> Retrieve Login Credentials </button>
+</a>
+
 <br>
 <a href="MasterLogin.html">
     <button id="logout"> Logout </button>
 </a>
+
 
 <script src = "function.js"></script>
 <script src = "testing.js"></script>

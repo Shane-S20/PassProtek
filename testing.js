@@ -3,13 +3,13 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 
-$("#create").on("click", function(){
+$("#create").click(function(){
   chrome.storage.sync.set({username: btoa(document.getElementById('uname').value), password: btoa(document.getElementById('pword').value) }, function() {
     console.log('Settings saved');
   });  
 })
 
-$("#retrieve").on("click", function(){
+$("#retrieve").click(function(){
   chrome.storage.sync.get(['username', 'password'], function(items) {
     console.log('Settings retrieved', items);
     let uname = atob(items.username)
