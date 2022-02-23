@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#window{
+    width: 500px;
+    height: 300px;
+    text-align: center;
+}   
+#deletesuccess{
+    font-weight: bold;
+    color: white;
+    background-color:green;
+    font-size: large;
+}
+body{
+    background-color:lightskyblue;
+}
+</style>    
+<script src="jquery-3.6.0.js" type="text/javascript"></script>
+<script src="DeleteCredentials.js"></script>
+<script src="cryptoJS.js"></script>
+
+</head>
+<body>
+<div id="window">
+    <div id="Delete">
+        <h1>Delete Login Credentials Below</h1>
+        <form id="Delete_Credentials">
+            <input type="text" id="deleted_credentials" name="deleted_credentials" size="20" placeholder="Website Name" required>
+            <button type="button" id="delete"> Delete Credentials</button>
+        </form>
+        <p id="deletesuccess"></p>
+        <a href="layout.html">
+            <button id="Back"> Go Back </button>
+        </a>
+    </div>
+</div>   
+</body>
+</html>

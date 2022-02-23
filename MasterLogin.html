@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            #window{
+<head>
+    <style>
+        #window{
             width: 500px;
             height: 200px;
             text-align: center;
-            }   
-            body{
-             background-color:lightskyblue;
-            }
-        </style>
+        }   
+        body{
+            background-color:lightskyblue;
+        }
+        #ErrorMessage{
+            color: red;
+            font-weight: bold;
+            background-color: black;
+            font-size: large;
+        }
+    </style>
+
+    <script src="jquery-3.6.0.js"> </script>
+    <script src="VerifyUser.js"></script>
+    <!--<script src="MasterLoginDB.js"></script>--> 
+    <script src="cryptoJS.js"></script>
 
     </head>
     <body>
@@ -20,14 +31,13 @@
             <br>
             <input type = "text" id = "masterUname" size="10" placeholder="Username" required>
             <input type = "text" id = "masterPword" size="15" placeholder="Password" required>  
-            <button id="loginButton" onclick="LogIntoManager()">Login</button>  
+            <button type="button" id="loginButton">Login</button>  
             <a href="layout.html">
                 <button id="store"> Go to Demo Page </button>
             </a>
             <br>
             <a href="Register.html"> New User? Register Here </a>
-
+            <p id="ErrorMessage"></p>
         </div>
-
     </body>
 </html>
