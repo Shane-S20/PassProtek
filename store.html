@@ -4,31 +4,52 @@
 <style>
 #window{
     width: 500px;
-    height: 200px;
+    height: 450px;
     text-align: center;
+    background-color: azure;
+    font-family: 'Segoe UI';
 }   
 body{
-    background-color:lightskyblue;
+    background-color:azure;
 }
-</style>    
 
+</style>    
+<link rel="stylesheet" href="bootstrap.min.css"> 
+<script src="jquery-3.6.0.js" type="text/javascript"></script>
+<script src="TestDB.js"></script> 
+<script src="cryptoJS.js"></script>
 
 </head>
 <body>
 <div id="window">
-    <h1>Store Login Credentials Below</h1>
-    <input type = "text" id = "loginUname" size="20" placeholder="Username" required>
-    <input type = "text" id = "loginPword" size="20" placeholder="Password" required>
-    <input type = "text" if = "loginURL" size="50" placeholder="Login Page URL" required>
-    <br>
-    <button id="StoreCredentials" onclick="StoretoFile()"> Submit Credentials</button>
-    <br>
-    <a href="layout.html">
-        <button id="Back"> Go Back </button>
-    </a>
+    <div id="Add">
+        <br>
+        <h1 class="display-5" style="font-weight: bold;">Store Login Credentials Below</h1>
+        <form id="Add_Credentials">
+            <br>
+            <input type="text" id="siteName" name="siteName" size="20" placeholder="Website Name" style="margin-bottom: 5px; border-radius: 10px;" required>
+            <br>
+            <input type="text" id="loginUname" name="loginUname" size="20" placeholder="Username" style="margin-bottom: 5px; border-radius: 10px;" required>
+            <br>
+            <input type="text" id="loginPword" name="loginPword" size="20" placeholder="Password" style="margin-bottom: 5px; border-radius: 10px;" required>
+            <br>
+            <input type="text" id="loginURL" name="loginURL" size="40" placeholder="Login Page URL" style="margin-bottom: 5px; border-radius: 10px;" required>
+            <button id="getURL" style="border-radius: 10px; width: 190px;"> Paste Current URL </button>
+            <br>
+            <br>
+            <button type="button" id="store" data-bs-toggle="tooltip" class="btn btn-primary" title="Submit Credentials!" style="border-radius: 10px; width: 190px;"> Submit Credentials</button>
+        </form>
+        <p id="storesuccess"></p>
+        <a href="layout.html">
+            <button id="Back" style="border-radius: 10px;"> Go Back </button>
+        </a>
+    </div>
+ 
 </div>   
 
-<script src = "function.js"></script>
-<script src = "testing.js"></script>
+<!-- <script src = "function.js"></script>
+<script src = "testing.js"></script> 
+FOR BUTTON ==> onclick="StoretoFile()" -->
+<script src="bootstrap.min.js"> </script>
 </body>
 </html>
