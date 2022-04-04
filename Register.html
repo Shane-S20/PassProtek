@@ -4,29 +4,40 @@
 <style>
 #window{
     width: 500px;
-    height: 200px;
+    height: 350px;
     text-align: center;
+    background-color: azure;
+    font-family: 'Segoe UI';
 }   
 body{
-    background-color:lightskyblue;
+    background-color:azure;
 }
-</style>    
 
+</style> 
+<link rel="stylesheet" href="bootstrap.min.css">   
+<script src = "jquery-3.6.0.js"> </script>
+<script src="MasterLoginDB.js"></script>
+<script src="cryptoJS.js"></script>
 
 </head>
 <body>
 <div id="window">
-    <h1> Register With Pass Protek </h1>
-    <input type = "text" id = "loginUname" size="20" placeholder="Username" required>
-    <input type = "text" id = "loginPword" size="20" placeholder="Password" required>
     <br>
-    <button id="CreateUser" onclick="Register()"> Register </button>
+    <h1 class="display-5" style="font-weight: bold;"> Register With Pass Protek </h1>
     <br>
+    <input type = "text" id = "loginUname" size="20" placeholder="Username" style="margin-bottom: 5px; border-radius: 10px;" required>
+    <br>
+    <input type = "text" id = "loginPword" size="20" placeholder="Password" style="margin-bottom: 5px; border-radius: 10px;" required>
+    <br>
+    <button type="button" id="CreateUser" data-bs-toggle="tooltip" class="btn btn-primary" title="Register Here!" style="border-radius: 10px; width: 190px;"> Register </button>
+    <br>
+    <p id="successMessage"></p>
     <a href="MasterLogin.html">
-        <button id="Back"> Go Back </button>
+        <button id="Back" style="border-radius: 10px;"> Go Back </button>
     </a>
 </div>   
 
+<script src="bootstrap.min.js"> </script>
 <script src = "function.js"></script>
 <script src = "testing.js"></script>
 </body>
