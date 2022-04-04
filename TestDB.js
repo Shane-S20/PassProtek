@@ -9,7 +9,6 @@ const decryptWithAES = (ciphertext, passphrase) => {
 };
 
 let db = null;
-
 function open_database() {
     let OpenRequest = window.indexedDB.open('PassProtek', 1);
     OpenRequest.onsuccess = function(event) {
@@ -18,15 +17,6 @@ function open_database() {
     }
     OpenRequest.onerror = function (event) {
         console.log("Problem opening DB.");
-    }
-    OpenRequest.onupgradeneeded = function (event) {
-        db3 = event.target.result;
-        let objectStore = db3.createObjectStore('IPaddr', {
-            keyPath: 'IPaddress'
-        });
-        objectStore.transaction.oncomplete = function (event) {
-            console.log("Network ObjectStore Created.");
-        }
     }
 }
 
