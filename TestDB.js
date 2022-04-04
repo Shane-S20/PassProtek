@@ -9,6 +9,7 @@ const decryptWithAES = (ciphertext, passphrase) => {
 };
 
 let db = null;
+
 function open_database() {
     let OpenRequest = window.indexedDB.open('PassProtek', 1);
     OpenRequest.onsuccess = function(event) {
@@ -20,11 +21,13 @@ function open_database() {
     }
 }
 
+chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
+    document.getElementById("loginURL").value = (tabs[0].url);
+});
+
 window.onload = function() {
    open_database();
     document.getElementById("store").onclick = () => {
-        //var transaction = db.transaction(["PassProtek"], "readwrite");
-        //const objectStore = insert_transaction.objectStore("testCases");
         const siteName = document.getElementById("siteName").value;
         const loginUname = btoa(document.getElementById("loginUname").value);
         const loginPword = btoa(document.getElementById("loginPword").value);
@@ -35,7 +38,6 @@ window.onload = function() {
         const randomString = Math.random().toString(36).substr(2,20);
         console.log(randomString)
 
-        //'C1E13074578EB93751086553FF7DE49E76FCCBB13F80EC3DDD06E2E7DE1A3198'
         const encryptPassword = encryptWithAES(loginPword, btoa(randomString));
         const encryptUname = encryptWithAES(loginUname, btoa(randomString))
         const encryptURL = encryptWithAES(loginURL, btoa(randomString))
@@ -54,8 +56,4 @@ window.onload = function() {
             console.log("THERE WAS AN ERROR STORING DATA")
         }
     }
-
 };
-
-
-

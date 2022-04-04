@@ -21,15 +21,13 @@ body{
 </head>
 <body>
 <div id="window">
-    <div id="Delete">
+    <div id="DeleteAccount">
         <br>
-        <h1 class="display-5" style="font-weight: bold;">Delete Login Credentials Below</h1>
-        <form id="Delete_Credentials">
-            <br>
-            <input type="text" id="deleted_credentials" name="deleted_credentials" size="20" placeholder="Website Name" style="border-radius: 10px;"required>
-            <button type="button" id="delete" data-bs-toggle="tooltip" class="btn btn-primary" title="Delete Credentials" style="border-radius: 10px; width: 190px;"> Delete Credentials</button>
-        </form>
-        <p id="deletesuccess"></p>
+        <h1 class="display-5" style="font-weight: bold;">Delete Account</h1>
+        <p>Enter Your Master Password To Delete Your Account</p>
+        <input type = "password" id = "masterPword" size="15" style="margin-bottom: 5px; border-radius: 10px;" placeholder="Password" required>
+        <button type="button" id="DeleteAccountButton" data-bs-toggle="tooltip" class="btn btn-danger" title="Delete Account" style="border-radius: 10px; width: 100px;">Submit</button>  
+        <br><br>
         <a href="layout.html">
             <button id="Back" style="border-radius: 10px;"> Go Back </button>
         </a>

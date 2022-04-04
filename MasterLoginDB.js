@@ -32,7 +32,6 @@ function create_user_database() {
     OpenRequest.onsuccess = function(event) {
         db = event.target.result;
         console.log("MASTER LOGIN DB OPENED");
-        //insert_records(testCases);
     }
 }
 
