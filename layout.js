@@ -23,7 +23,6 @@ function create_database() {
 }
 
 
-
 let db3 = null;
 function create_network_database() {
     let OpenRequest = window.indexedDB.open('PassProtekNetworks', 1);
@@ -43,6 +42,7 @@ function create_network_database() {
     OpenRequest.onsuccess = function(event) {
         db3 = event.target.result;
         console.log("Network DB Opened");
+        //insert_records(testCases);
     }
 }
 
@@ -77,5 +77,10 @@ window.onload = function() {
         search.onerror = () => {
             console.log("Search failed");
         };
+   
+     
+
     }
+
+
 }
