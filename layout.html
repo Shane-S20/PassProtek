@@ -2,45 +2,71 @@
 <html>
 <head>
 
-<link rel = "stylesheet" href = "test_style.css">
+<style>
+#box{
+    width: 400px;
+    height: 400px;
+    background-color: azure;
+    text-align: center;
+    font-family: 'Segoe UI';
+}
+body{
+    background-color: azure;
+}
+h2,p{
+    display: inline;
+}
+#delete{
+    margin: auto;
+} 
+#logout{
+    margin: auto;
+}
+#img{
+    margin-top: -55px;
+    margin-right: 80px;
+}
+
+</style>
+<link rel="stylesheet" href="bootstrap.min.css"> 
 <script src = "jquery-3.6.0.js"> </script>
+<script src="layout.js"></script>
+    
+<!-- <link rel = "stylesheet" href = "test_style.css"> -->
 
 </head>
 <body>
-<h1>URL TEST DEMO </h1>
-<br>
-<div id = "box">
-    <span> URL:</span> <h2 id = "url"> </h2>
-    <br>
-    <button id ="Test_button"> Test URL </button>
-    <h1 id = "result"> </h1>
 
-    <button id = "ip_button"> Get IP Address </button>
-    <h2 id = "ip"> </h2>
+<div id = "box">
+    <br>
+    <h1 class="display-5" style="font-weight: bold; margin-right: 60px;">Pass Protek</h1> 
+    <img id="img" class="float-end" src = "lock.png">
+    <hr>
+    <a href="store.html">
+        <button id="store" type="button" class="btn btn-primary" style="margin-bottom: 5px; border-radius: 10px; width: 250px;"> Store Login Credentials </button>
+    </a>
+    <br>
+    <a href="GetCredentials.html">
+        <button id="get" type="button" class="btn btn-primary" style="margin-bottom: 5px; border-radius: 10px; width: 250px;""> Retrieve Login Credentials </button>
+    </a>
+    <br>
+    <a href="DeleteCredentials.html">
+        <button id="delete" type="button" class="btn btn-primary" style="margin-bottom: 5px; border-radius: 10px; width: 250px;"">Delete Credentials</button>
+    </a>
+    <br>
+    <a href="TrustedNetworks.html">
+        <button id="trustedNetworks" type="button" class="btn btn-primary" style="margin-bottom: 5px; border-radius: 10px; width: 250px;"">Trusted Networks</button>
+    </a>
+    <a href="Settings.html">
+        <button id="delete" type="button" class="btn btn-secondary" style="margin-bottom: 5px; border-radius: 10px; width: 250px;"">Settings</button>
+    </a>
+    <br>
+    <a href="MasterLogin.html">
+        <button id="logout" type="button" class="btn btn-danger" style="margin-bottom: 5px"> Sign Out </button>
+    </a>
     
 </div>
 
-<h1> Create New User: </h1>
-<br>
-<span>Username:</span>
-    <input type = "text" id = "uname" size="15" required>
-    <br>
-    <br>
-<span> Password:</span>
-    <input type = "text" id = "pword" size="15" required>
-    <button id = "create"> Create User </button>
-    <button id = "retrieve"> Display Credentials </button>
-    <h3 id="encodedText"> </h3>
-    <h3 id="decodedText"> </h3>
-<a href="store.html">
-    <button id="store"> Store Login Credentials </button>
-</a>
-<br>
-<a href="MasterLogin.html">
-    <button id="logout"> Logout </button>
-</a>
-
-<script src = "function.js"></script>
-<script src = "testing.js"></script>
+<script src="bootstrap.min.js"> </script>
 </body>
 </html>
