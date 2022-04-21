@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#window{
+    width: 500px;
+    height: 450px;
+    text-align: center;
+    background-color: azure;
+    font-family: 'Segoe UI';
+}   
+body{
+    background-color:azure;
+}
+
+</style>    
+<link rel="stylesheet" href="bootstrap.min.css"> 
+<script src="jquery-3.6.0.js" type="text/javascript"></script>
+<script src="cryptoJS.js"></script>
+<script src="TrustedNetworks.js"></script>
+
+</head>
+<body>
+<div id="window">
+    <div id="addnetwork">
+        <br>
+        <h1 class="display-5" style="font-weight: bold;">Add Trusted Networks</h1>
+        <p class="h5"> Enter The Current Network Details Below </p>
+        <form id="add_networks">
+            <br>
+            <input type="text" id="networkName" name="networkName" size="20" placeholder="Network Name" style="margin-bottom: 5px; border-radius: 10px;" >
+            <br>
+            <input type="text" id="networkIP" name="networkIP" size="20" placeholder="Network IP" style="margin-bottom: 5px; border-radius: 10px;" >
+            <br>
+            <button type="button" id="getIP" style="border-radius: 10px; width: 190px;"> Get IP Address </button>
+            <br>
+            
+            <br>
+            <button type="button" id="storeNetwork" data-bs-toggle="tooltip" class="btn btn-primary" title="Store Networks!" style="border-radius: 10px; width: 190px;"> Store Network</button>
+        </form>
+        <p id="successful"></p>
+        <a href="layout.html">
+            <button id="Back" style="border-radius: 10px;"> Go Back </button>
+        </a>
+
+    </div>
+    <div id="results">
+        <p id="networkingIP"></p>
+    </div>
+ 
+</div>   
+
+
+
+</body>
+</html>
