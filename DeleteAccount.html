@@ -4,7 +4,7 @@
 <style>
 #window{
     width: 500px;
-    height: 320px;
+    height: 380px;
     text-align: center;
     background-color: azure;
     font-family: 'Segoe UI';
@@ -24,13 +24,15 @@ body{
     <div id="DeleteAccount">
         <br>
         <h1 class="display-5" style="font-weight: bold;">Delete Account</h1>
-        <p class="h5"> Enter Your Master Password to Delete Your Account</p>
+        <p class="h5"> Enter Your Master Login Credentials to Delete Your Account</p>
         <hr>
+        <input type = "text" id = "masterUname" size="15" style="margin-bottom: 5px; border-radius: 10px;" placeholder="Username" required>
         <input type = "password" id = "masterPword" size="15" style="margin-bottom: 5px; border-radius: 10px;" placeholder="Password" required>
+        <br>
         <button type="button" id="DeleteAccountButton" data-bs-toggle="tooltip" class="btn btn-danger" title="Delete Account" style="border-radius: 10px; width: 100px;">Submit</button>  
         <p id="deleteAccountSuccess"></p>
-        <a href="Settings.html">
-            <button id="Back" style="border-radius: 10px;"> Go Back </button>
+        <a href="MasterLogin.html">
+            <button id="Back" style="border-radius: 10px;"> Sign Out </button>
         </a>
     </div>
 </div>   
