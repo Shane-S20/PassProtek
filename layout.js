@@ -61,6 +61,30 @@ window.onload = function() {
     $.getJSON("https://api.ipify.org?format=json", function (data) {
         $.fn.delegateJSONResult(data.ip);
     });
+    document.getElementById("testNetwork").onclick = () => {
+        const transaction = db3.transaction("IPaddr", "readonly");
+        const Data = transaction.objectStore("IPaddr");
+     
+        console.log(IPdata)
+        const search = Data.openCursor(sha256(IPdata));
+
+        search.onsuccess = function(event) {
+            console.log("Search successful");
+            var cursor = event.target.result;
+            if(cursor)
+            {
+                document.getElementById("NetworkWarning").innerHTML = '<br><div class="alert alert-success"style="width: 280px;text-align: center; margin: auto"><strong> Connected to Trusted Network </strong></div>'
+            } 
+            else {
+                document.getElementById("NetworkWarning").innerHTML = '<br><div class="alert alert-danger"style="width: 280px;text-align: center; margin: auto"><strong>WARNING! YOU ARE NOT CONNECTED TO A TRUSTED NETWORK</strong></div>'
+            }
+
+        };
+
+        search.onerror = () => {
+            console.log("Search failed");
+        };
+    }
 
     document.getElementById("get").onclick = () => {
         const transaction = db3.transaction("IPaddr", "readonly");
