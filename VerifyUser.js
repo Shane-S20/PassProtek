@@ -32,8 +32,9 @@ window.onload = function() {
         const entered_username = document.getElementById("masterUname").value;
         const entered_password = document.getElementById("masterPword").value;
         localStorage.setItem('loggedIn', sha256(entered_username));
-        const shaValue = sha256(entered_password)
-        const encoded_input = btoa(shaValue)
+        localStorage.setItem('loggedInPassword', sha256(entered_password));
+        const shaValue = sha256(entered_password);
+        const encoded_input = btoa(shaValue);
         console.log(encoded_input)
 
         const shaUser = sha256(entered_username)

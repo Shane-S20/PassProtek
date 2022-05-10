@@ -43,17 +43,18 @@ window.onload = function() {
             const transaction = db.transaction("Data","readwrite")
             const profiles = transaction.objectStore("Data")
 
-            const randomString = Math.random().toString(36).substr(2,20);
-            console.log(randomString)
+            //const randomString = Math.random().toString(36).substr(2,20);
+            //console.log(randomString)
+            const key = localStorage.getItem('loggedInPassword')
 
-            const encryptPassword = encryptWithAES(loginPword, btoa(randomString));
-            const encryptUname = encryptWithAES(loginUname, btoa(randomString))
-            const encryptURL = encryptWithAES(loginURL, btoa(randomString))
+            const encryptPassword = encryptWithAES(loginPword, btoa(key));
+            const encryptUname = encryptWithAES(loginUname, btoa(key))
+            const encryptURL = encryptWithAES(loginURL, btoa(key))
             const shaSite = sha256(siteName)
             
             console.log("OUTSIDE FUNCTION")
             console.log(encryptURL)
-            const profile = {Website_Name: shaSite,Login_Username: encryptUname,Login_Password: encryptPassword,Login_URL: encryptURL,Encoded_Key: btoa(randomString)}
+            const profile = {Website_Name: shaSite,Login_Username: encryptUname,Login_Password: encryptPassword,Login_URL: encryptURL}
             const request = profiles.add(profile)
             
             console.log("SUBMIT BUTTON PRESSED")

@@ -97,10 +97,10 @@ window.onload = function() {
                 // let retrievedSite = index.get(Requested_Website)
                 // var result = retrievedSite.result.Website_Name;
                 //const decrypt_Website_Name = decryptWithAES(search.result.Website_Name, 'MasterPassphrase');
-
-                const decryptUname = decryptWithAES(search.result.Login_Username, search.result.Encoded_Key)
-                const decryptPassword = decryptWithAES(search.result.Login_Password, search.result.Encoded_Key)
-                const decryptURL = decryptWithAES(search.result.Login_URL, search.result.Encoded_Key)
+                const key = localStorage.getItem('loggedInPassword')
+                const decryptUname = decryptWithAES(search.result.Login_Username, btoa(key))
+                const decryptPassword = decryptWithAES(search.result.Login_Password, btoa(key))
+                const decryptURL = decryptWithAES(search.result.Login_URL, btoa(key))
 
                 chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
                     console.log(tabs[0].url);
