@@ -22,12 +22,14 @@ function open_database() {
     }
 }
 
-chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
-    document.getElementById("loginURL").value = (tabs[0].url);
-});
 
 window.onload = function() {
    open_database();
+   document.getElementById("getURL").onclick = () => {
+    chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
+        document.getElementById("loginURL").value = (tabs[0].url);
+    });
+    }
     document.getElementById("store").onclick = () => {
 
         if(document.getElementById("siteName").value == "" || document.getElementById("loginUname").value == "" || document.getElementById("loginPword").value == "" || document.getElementById("loginURL").value == "") {

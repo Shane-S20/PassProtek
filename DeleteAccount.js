@@ -61,6 +61,7 @@ window.onload = function() {
                         Data.delete(encoded_user);
                         let deleteRequest = window.indexedDB.deleteDatabase(loggedInAs);
                         localStorage.setItem('loggedIn', '');
+                        document.getElementById("deleteAccountSuccess").innerHTML = '<br><div class="alert alert-danger"style="width: 280px;text-align: center; margin: auto"><strong>Account deleted successfully!</strong></div>'
                     }  
                     else{
                         document.getElementById("deleteAccountSuccess").innerHTML = '<br><div class="alert alert-danger"style="width: 280px;text-align: center; margin: auto"><strong>Incorrect Credentials, Try Again!</strong></div>'

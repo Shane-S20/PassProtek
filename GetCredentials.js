@@ -113,11 +113,13 @@ window.onload = function() {
                             document.getElementById("Retrieved_Username").innerHTML = "Decrypted Username : " + atob(decryptUname);
                             document.getElementById("Retrieved_Password").innerHTML = "Decrypted Password : " + atob(decryptPassword);
                             document.getElementById("Retrieved_URL").innerHTML = "Decrypted Website URL : " + atob(decryptURL);
+                            console.log(atob(decryptURL))
                             document.getElementById("OpenURL").innerHTML = '<button id="openLink" style="border-radius: 10px;">Open URL In New Tab</button>'
                             navigator.clipboard.writeText(atob(decryptPassword));
                             document.getElementById("RetrievedSuccess").innerHTML = '<div class="alert alert-success"style="width: 280px;text-align: center; margin: auto"><strong> Password Copied to Clipboard </strong></div>'
                             console.log("DATA RETRIEVED SUCCESSFULLY")
                             document.getElementById("openLink").onclick = () => {
+                                console.log(atob(decryptURL))
                                 window.open(atob(decryptURL))    
                             }
                         }
