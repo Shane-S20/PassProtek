@@ -85,6 +85,9 @@ window.onload = function() {
             console.log("GET BUTTON PRESSED")
 
             search.onsuccess = () => {
+
+                if(search.result!=undefined)
+                {
                 const key = localStorage.getItem('loggedInPassword')
                 const decryptUname = decryptWithAES(search.result.Login_Username, btoa(key))
                 const decryptPassword = decryptWithAES(search.result.Login_Password, btoa(key))
@@ -128,13 +131,16 @@ window.onload = function() {
                     }
                 });
 
-            }
             search.onerror = () => {
                 console.log("THERE WAS AN ERROR GETTING DATA")
             }
+        }    
+        else 
+        {  document.getElementById("RetrievedSuccess").innerHTML = '<div class="alert alert-success"style="width: 280px;text-align: center; margin: auto"><strong> Cannot locate login credentials. </strong></div>' }
+    
         }
     }
-
+}
 };
 
 var sha256 = function sha256(ascii) {
