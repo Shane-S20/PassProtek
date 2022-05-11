@@ -68,7 +68,9 @@ function open_user_database() {
 
 open_user_database();
 
+
 window.onload = function() {
+   
     document.getElementById("get").onclick = () => {
 
         if(document.getElementById("Entered_Credentials").value == "") {
@@ -82,21 +84,7 @@ window.onload = function() {
             const search = Data.get(shaReq);
             console.log("GET BUTTON PRESSED")
 
-            // const transaction2 = db2.transaction("Users","readonly");
-            // const User = transaction2.objectStore("Users");
-            // const user_search = User.get("User1");
-            // user_search.onsuccess = () => {
-            //     console.log(user_search.result.Username);
-            //     console.log(user_search.result.Password);
-            // }
-
             search.onsuccess = () => {
-                //console.log(search.result)
-                //console.log(search.result.Website_Name)
-                // let index = Data.index(Requested_Website);
-                // let retrievedSite = index.get(Requested_Website)
-                // var result = retrievedSite.result.Website_Name;
-                //const decrypt_Website_Name = decryptWithAES(search.result.Website_Name, 'MasterPassphrase');
                 const key = localStorage.getItem('loggedInPassword')
                 const decryptUname = decryptWithAES(search.result.Login_Username, btoa(key))
                 const decryptPassword = decryptWithAES(search.result.Login_Password, btoa(key))
@@ -146,6 +134,7 @@ window.onload = function() {
             }
         }
     }
+
 };
 
 var sha256 = function sha256(ascii) {

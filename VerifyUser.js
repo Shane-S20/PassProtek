@@ -32,7 +32,7 @@ window.onload = function() {
         const entered_username = document.getElementById("masterUname").value;
         const entered_password = document.getElementById("masterPword").value;
         localStorage.setItem('loggedIn', sha256(entered_username));
-        localStorage.setItem('loggedInPassword', sha256(entered_password));
+        localStorage.setItem('loggedInPassword', btoa(entered_password));
         const shaValue = sha256(entered_password);
         const encoded_input = btoa(shaValue);
         console.log(encoded_input)
@@ -46,9 +46,6 @@ window.onload = function() {
         const user_search = User.get(encoded_user);
 
         user_search.onsuccess = () => {
-            // console.log(user_search.result.Username);
-            // console.log(user_search.result.Password);
-            // console.log(atob(user_search.result.Password))
             if(document.getElementById("masterUname").value == "" || document.getElementById("masterPword").value == "") {
                 document.getElementById("ErrorMessage").innerHTML = '<br><div class="alert alert-danger"style="width: 280px;text-align: center; margin: auto"><strong>Please Enter Login Credentials To Continue</strong></div>'
             } 
@@ -57,12 +54,7 @@ window.onload = function() {
                 var toggle = false;
                 var keyRequest = User.getAllKeys();
                 keyRequest.onsuccess = () => {
-                // username_list.push(keyRequest.result)
-                // console.log(keyRequest.result);
-                // console.log(username_list)
-                    for(i=0;i<10;i++){
-                        //console.log(keyRequest.result[i])
-                        console.log("IN LOOP")
+                    for(i=0;i<10;i++){           
                         if(encoded_user === keyRequest.result[i])
                         {
                             console.log("MATCH FOUND")

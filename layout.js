@@ -96,7 +96,15 @@ window.onload = function() {
         search.onsuccess = function(event) {
             console.log("Search successful");
             var cursor = event.target.result;
-            if(cursor){console.log("security passed, user may proceed")} else {alert("YOU ARE NOT ON A TRUSTED NETWORK")}
+            if(cursor){
+                window.location.href = "GetCredentials.html"
+            } 
+            else {
+                document.getElementById("NetworkWarning").innerHTML = '<br><div class="alert alert-danger"style="width: 280px;text-align: center; margin: auto"><strong> Warning! Current Network is not trusted with the plugin </strong><br><button id="continue" style="border-radius: 10px;">Proceed Anyways</button></div>'
+                document.getElementById("continue").onclick = () => {
+                    window.location.href = "GetCredentials.html"
+                }
+            }
         };
 
         search.onerror = () => {
