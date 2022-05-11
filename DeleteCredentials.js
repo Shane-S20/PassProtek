@@ -23,19 +23,28 @@ window.onload = function() {
             const Data = transaction.objectStore("Data");
             const Requested_Website = document.getElementById("deleted_credentials").value;
             const shaReq = sha256(Requested_Website)
-            const search = Data.delete(shaReq);
-            console.log("DELETE BUTTON PRESSED")
 
-            search.onsuccess = () => {
-                document.getElementById("deletesuccess").innerHTML = '<br><div class="alert alert-success"style="width: 280px;text-align: center; margin: auto"><strong> Credentials Successfully Deleted </strong></div>'
-                console.log("DATA DELETED SUCCESSFULLY")
-            }
-            search.onerror = () => {
-                console.log("THERE WAS AN ERROR DELETING DATA")
-            }
+            const searchVal = Data.get(shaReq)
+            searchVal.onsuccess = () => {
+                if(searchVal.result != undefined){
+                    const search = Data.delete(shaReq);
+                    console.log("DELETE BUTTON PRESSED")
+                    search.onsuccess = () => {
+                    document.getElementById("deletesuccess").innerHTML = '<br><div class="alert alert-success"style="width: 280px;text-align: center; margin: auto"><strong> Credentials Successfully Deleted. </strong></div>'
+                    console.log("DATA DELETED SUCCESSFULLY")
+                    }   
+                    search.onerror = () => {
+                    console.log("THERE WAS AN ERROR DELETING DATA")
+                    }
+                }
+                else
+                {
+                    document.getElementById("deletesuccess").innerHTML = '<br><div class="alert alert-success"style="width: 280px;text-align: center; margin: auto"><strong> No Match Found. </strong></div>'
+                }
         }
     }    
 };
+}
 
 var sha256 = function sha256(ascii) {
     function rightRotate(value, amount) {
